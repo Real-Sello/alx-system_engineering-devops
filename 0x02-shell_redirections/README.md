@@ -1,6 +1,6 @@
-Description Of All Scripts in The Task
+# Description Of All Scripts in The Task
 
-0-hello_world - script that prints “Hello, World”, followed by a new line to the standard output.
+0. hello_world - script that prints “Hello, World”, followed by a new line to the standard output.
 
 1. Confused smiley - script that displays a confused smiley "(Ôo)'.
 
@@ -8,7 +8,7 @@ Description Of All Scripts in The Task
 
 3. What about 2? - script that displays the content of /etc/passwd and /etc/hosts.
 
-4.Last lines of a file - script that displays the last 10 lines of /etc/passwd.
+4. Last lines of a file - script that displays the last 10 lines of /etc/passwd.
 
 5. I'd prefer the first ones actually - script that displays the first 10 lines of /etc/passwd.
 
