@@ -29,4 +29,4 @@
 <img src="https://github.com/Real-Sello/alx-system_engineering-devops/blob/master/0x04-loops_conditions_and_parsing/Passing%20Shellcheck.png" 
 width=1000 height=200/>
 
-For every feedback, Shellcheck will provide a code that you can use to get more information about the issue, for example for code SC2034, you can browse https://github.com/koalaman/shellcheck/wiki/SC2034. width=150 height=150/> 
+For every feedback, Shellcheck will provide a code that you can use to get more information about the issue, for example for code SC2034, you can browse https://github.com/koalaman/shellcheck/wiki/SC2034.
