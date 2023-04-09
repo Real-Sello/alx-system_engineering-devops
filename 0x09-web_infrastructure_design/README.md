@@ -1,5 +1,8 @@
 # 0x09. Web infrastructure design
 `DevOps` `SysAdmin` `web infrastructure`
+<hr>
+
+![img](/images/Technical.jpg)
 
 ## Requirements
 ### General
