@@ -2,7 +2,7 @@
 `DevOps` `SysAdmin` `web infrastructure`
 <hr>
 
-![img](/images/Technical.jpg)
+![img](https://github.com/Real-Sello/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/Technical.jpg)
 ## Requirements
 ### General
 - A `README.md` file, at the root of the folder of the project, is mandatory
