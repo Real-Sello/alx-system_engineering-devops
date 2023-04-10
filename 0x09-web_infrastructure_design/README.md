@@ -2,7 +2,7 @@
 `DevOps` `SysAdmin` `web infrastructure`
 <hr>
 
-![img](https://github.com/Real-Sello/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/Technical.jpg)
+![img](/images/Technical.jpg)
 ## Requirements
 ### General
 - A `README.md` file, at the root of the folder of the project, is mandatory
@@ -19,6 +19,87 @@
 - Similarly in a job interview, you should answer what the interviewer asked for, be careful about being too verbose - always ask the interviewer if going into details is necessary - speaking too much can play against you
 - In this project, again, avoid going in details if not asked
 
-# Conclusion
+# Tasks
 
-- _to be edited..._
+### 0. Simple web stack
+- A one server web infrastructure that hosts the website `www.foobar.com`.
+
+    - Infrastructure:
+       - 1 server
+        - 1 web server (Nginx)
+        - 1 application server
+        - 1 application files (your code base)
+        - 1 database (MySQL)
+        - 1 domain name `foobar.com` configured with a `www` record that points to your server `IP 8.8.8.8`
+
+    - Concepts to know from this infrastructure:
+        - What is a server
+        - What is the role of the domain name
+        - What type of DNS record `www` is in `www.foobar.com`
+        - What is the role of the web server
+        - What is the role of the application server
+        - What is the role of the database
+        - What is the server using to communicate with the computer of the user requesting the website
+        
+    - You must be able to explain what the issues are with this infrastructure:
+        - SPOF
+        - Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+        - Cannot scale if too much incoming traffic
+<hr>
+
+### 1. Distributed web infrastructure
+- A three server web infrastructure that hosts the website www.foobar.com.
+
+    - Infrastructure:
+       - 2 servers
+       - 1 web server (Nginx)
+       - 1 application server
+       - 1 load-balancer (HAproxy)
+       - 1 set of application files (your code base)
+       - 1 database (MySQL)
+
+    - Concepts to know from this infrastructure:
+        - For every additional element, why you are adding it
+        - What distribution algorithm your load balancer is configured with and how it works
+        - Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+        - How a database Primary-Replica (Master-Slave) cluster works
+        - What is the difference between the Primary node and the Replica node in regard to the application
+        
+    - You must be able to explain what the issues are with this infrastructure:
+        - Where are SPOF
+        - Security issues (no firewall, no HTTPS)
+        - No monitoring
+
+<hr>
+
+### 2. Secured and monitored web infrastructure
+- A three server web infrastructure that hosts the website `www.foobar.com`, it must be secured, serve encrypted traffic, and be monitored.
+
+    - Infrastructure:
+        - 3 firewalls
+        - 1 SSL certificate to serve `www.foobar.com` over HTTPS
+        - 3 monitoring clients (data collector for Sumologic or other monitoring services)
+
+    - Concepts to know from this infrastructure:
+        - For every additional element, why you are adding it
+        - What are firewalls for
+        - Why is the traffic served over HTTPS
+        - What monitoring is used for
+        - How the monitoring tool is collecting data
+        - Explain what to do if you want to monitor your web server QPS
+
+    - You must be able to explain what the issues are with this infrastructure:
+        - Why terminating SSL at the load balancer level is an issue
+        - Why having only one MySQL server capable of accepting writes is an issue
+        - Why having servers with all the same components (database, web server and application server) might be a problem
+<hr>
+
+### 3. Scale up
+- What Is an Application Server vs. a Web Server?
+    - Infrastructure:
+        - 1 server
+        - 1 load-balancer (HAproxy) configured as cluster with the other one
+        - Split components (web server, application server, database) with their own server
+    - You must be able to explain some specifics about this infrastructure:
+        - For every additional element, why you are adding it
+<hr>
