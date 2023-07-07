@@ -48,7 +48,7 @@
 <hr>
 
 ### 1. Distributed web infrastructure
-- A three server web infrastructure that hosts the website www.foobar.com.
+- A three server web infrastructure that hosts the website `www.foobar.com`.
 
     - Infrastructure:
        - 2 servers
