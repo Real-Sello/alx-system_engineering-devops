@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# A Bash script that configures a new Ubuntu machine
+# with NginX (this script will be run on the server itself)
+
+
+# Update package lists
+apt update
+
+# Install nginx
+apt install -y nginx
+
+# Configure nginx
+echo 'server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  location / {
+    echo "Hello World!";
+  }
+}' > /etc/nginx/sites-available/default
+
+# Restart nginx
+service nginx restart
