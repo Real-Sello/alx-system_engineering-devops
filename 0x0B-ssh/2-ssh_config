@@ -1,0 +1,3 @@
+Host 3.89.155.234
+        AddKeysToAgent yes
+        IdentityFile ~/.ssh/school
