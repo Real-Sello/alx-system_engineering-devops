@@ -1,3 +1,4 @@
-Host 3.89.155.234
+Host 54.236.232.78
         AddKeysToAgent yes
         IdentityFile ~/.ssh/school
+        PasswordAuthentication no
