@@ -1,21 +1,42 @@
 # Puppet manifest that installs and configures an Nginx server
 
+# Install Nginx package
 package { 'nginx':
   ensure => installed,
 }
 
-file_line { 'server_config':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'location /redirect_me { return 301 http://$host/; }',
+# Configure Nginx server block
+file { '/etc/nginx/sites-available/default':
+  ensure  => file,
+  content => "
+server {
+    listen 80 default_server;
+    server_name _;
+
+    location / {
+        root   /var/www/html;
+        index  index.html;
+    }
+
+    location /redirect_me {
+    return 301 http://${host}/;
+    }
+}
+",
+  require => Package['nginx'],
+  notify  => Service['nginx'],
 }
 
+# Create index.html with "Hello World!" content
 file { '/var/www/html/index.html':
+  ensure  => file,
   content => 'Hello World!',
+  require => Package['nginx'],
 }
 
+# Ensure Nginx service is running
 service { 'nginx':
   ensure  => running,
-  require => [Package['nginx'], File['/etc/nginx/sites-available/default']],
+  enable  => true,
+  require => Package['nginx'],
 }
