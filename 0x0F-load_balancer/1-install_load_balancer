@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Update the package list and install Load Balancer
 
 sudo apt-get update -y
