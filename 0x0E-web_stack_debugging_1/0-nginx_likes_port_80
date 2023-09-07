@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that restores default port
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart
