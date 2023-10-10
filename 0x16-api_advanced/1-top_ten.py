@@ -23,4 +23,4 @@ def top_ten(subreddit):
             print(post.get('data').get('title'))
             reader += 1
     else:
-        print('None')
+        print(None)
