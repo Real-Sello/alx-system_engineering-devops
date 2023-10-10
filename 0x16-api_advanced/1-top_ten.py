@@ -11,9 +11,8 @@ def top_ten(subreddit):
     the first 10 hot posts listed for a given subreddit
     """
     URL = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    post_status = requests.get(URL,
-                                             headers={'User-agent': 'my-bot'},
-                                             allow_redirects=False)
+    post_status = requests.get(URL, headers={'User-agent': 'my-bot'},
+                               allow_redirects=False)
 
     if post_status.status_code == 200:
         posts = post_status.json().get('data').get('children')
